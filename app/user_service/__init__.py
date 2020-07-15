@@ -9,3 +9,11 @@ def generateUsername(givenNames, lastName):
 def createUserRecord(id, givenNames, lastName, department):
   username = generateUsername(givenNames, lastName)
   return RECORD_SEPARATOR.join([id, username, RECORD_SEPARATOR.join(givenNames), lastName, department])
+
+def createManyUserRecords(users):
+  userRecords = []
+  for user in users:
+    id, *fullName, department = user.split(RECORD_SEPARATOR)
+    * givenNames, lastName = fullName
+    userRecords.append(createUserRecord(id, givenNames, lastName, department))
+  return userRecords

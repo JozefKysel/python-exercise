@@ -1,5 +1,6 @@
 from utils import RECORD_SEPARATOR, HELP_FLAG_LONG, HELP_FLAG_SHORT, OUTPUT_FLAG_LONG, OUTPUT_FLAG_SHORT, HELP_MESSAGE
-from user_repository import readUserRecordsFromInputFiles, writeUserRecordsToOutputFile
+from user_repository import readUsersFromInputFiles, writeUserRecordsToOutputFile
+from user_service import createManyUserRecords
 
 import sys
 
@@ -15,7 +16,8 @@ def main(args):
   
   _, _, outputFilePath, *inputFilesPaths = args
   
-  userRecords = readUserRecordsFromInputFiles(inputFilesPaths)
+  users = readUsersFromInputFiles(inputFilesPaths)
+  userRecords = createManyUserRecords(users)
   writeUserRecordsToOutputFile(outputFilePath, userRecords)
 
 print(main(sys.argv))

@@ -1,4 +1,4 @@
-from user_service import generateUsername, createUserRecord
+from user_service import generateUsername, createUserRecord, createManyUserRecords
 import unittest
 
 class TestUserService(unittest.TestCase):
@@ -8,7 +8,16 @@ class TestUserService(unittest.TestCase):
   lastName = 'Doe'
   department = 'Research'
   username = 'jsdoe'
+  users = ['3456:Milan:Rastislav:Stefanik:Defense', '4567:Jozef:Kysel:Development']
+  userRecords = ['3456:mrstefanik:Milan:Rastislav:Stefanik:Defense', '4567:jkysel:Jozef:Kysel:Development']
   colon = ':'
+
+  def test_createManyUserRecords(self):
+      """
+      Test that it will create many user records 
+      """
+      result = createManyUserRecords(self.users)
+      self.assertEqual(result, self.userRecords)
   
   def test_generateUsername(self):
         """
@@ -60,7 +69,6 @@ class TestUserService(unittest.TestCase):
         result = createUserRecord(self.id, givenNames, self.lastName, self.department)
         expectedResult = self.colon.join([self.id, username, self.colon.join(givenNames), self.lastName, self.department])
         self.assertEqual(result, expectedResult)
-
 
 if __name__ == "__main__":
     unittest.main()
