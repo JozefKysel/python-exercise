@@ -1,0 +1,6 @@
+HELP_FLAG_SHORT = '-h'
+OUTPUT_FLAG_SHORT = '-o'
+HELP_FLAG_LONG = '--help'
+OUTPUT_FLAG_LONG = '--output'
+HELP_MESSAGE = 'usage: `python3 ugen.py –-output [output file] [input file]...`'
+RECORD_SEPARATOR = ':'
