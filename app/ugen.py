@@ -1,5 +1,5 @@
 from utils import RECORD_SEPARATOR, HELP_FLAG_LONG, HELP_FLAG_SHORT, OUTPUT_FLAG_LONG, OUTPUT_FLAG_SHORT, HELP_MESSAGE
-from userRepository import readUserRecordsFromInputFiles, writeUserRecordsToOutputFile
+from user_repository import readUserRecordsFromInputFiles, writeUserRecordsToOutputFile
 
 import sys
 

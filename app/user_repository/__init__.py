@@ -1,4 +1,4 @@
-from userService import createUserRecord
+from user_service import createUserRecord
 from utils import RECORD_SEPARATOR
 
 def readUserRecordsFromInputFiles(inputFilesPaths):
